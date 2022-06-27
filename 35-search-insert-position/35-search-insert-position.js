@@ -13,7 +13,7 @@ var searchInsert = function(nums, target) {
 function binarySearch(nums, target) {
     let start=0;
     let end=nums.length - 1;
-    const getMedIndex = (s, e) => Math.floor(s + e - s / 2);
+    const getMedIndex = (s, e) => Math.floor((s + e) / 2);
     
     while(start<=end) {
         const med = getMedIndex(start, end);
