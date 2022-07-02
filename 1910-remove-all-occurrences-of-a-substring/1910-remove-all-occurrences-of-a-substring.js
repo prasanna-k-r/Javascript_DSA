@@ -4,18 +4,14 @@
  * @return {string}
  */
 var removeOccurrences = function(s, part) {
-   for(let i=0; i<s.length; i++) {
-      for(let j=0; j<part.length; j++) {
-          if(s[i+j] !== part[j]) {
-              break;
-          }
-          
-          if(j === part.length - 1) {
-              s = s.slice(0, i) + s.slice(i+part.length);
-              i = -1;
-          }
+    let result = s
+    for (let i = 0; i < result.length; i++) {
+      const firstIndex = result.indexOf(part)
+      if (firstIndex > -1) {
+        i = -1
+        result = result.slice(0, firstIndex) + result.slice(firstIndex + part.length)    
       }
-  }
-  
-  return s;
+    }
+    
+    return result;
 };
