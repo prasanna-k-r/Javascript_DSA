@@ -4,16 +4,9 @@
  * @return {number[]}
  */
 var shuffle = function(nums, n) {
-    let output = [];
-    let first = 0;
-    let second = n;
-    
-    for(let i = 0; i < nums.length; i+=2) {
-        output[i] = nums[first];
-        output[i+1] = nums[second];
-        first++;
-        second++;
+    let result = [];
+    for(let i=0; i<n; i++) {
+        result.push(nums[i],nums[n+i]);
     }
-    
-    return output;
+    return result;
 };
