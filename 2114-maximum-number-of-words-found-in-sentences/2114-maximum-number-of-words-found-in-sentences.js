@@ -6,9 +6,7 @@ var mostWordsFound = function(sentences) {
     let maxCount = 0;
     for(let i=0; i<sentences.length; i++) {
         let words = sentences[i].split(" ");
-        if(maxCount < words.length) {
-            maxCount = words.length;
-        }
+        maxCount = Math.max(words.length, maxCount);
     }
     return maxCount;
 };
