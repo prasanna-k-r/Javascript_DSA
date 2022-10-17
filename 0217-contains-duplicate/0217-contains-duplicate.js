@@ -3,13 +3,12 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-    let numObj = {};
-    for(let val of nums) {
-        numObj[val] = (numObj[val] || 0) + 1;
-        if(numObj[val] > 1) {
+    let obj = {}
+    for(let num of nums) {
+        obj[num] = (obj[num] || 0) + 1;
+        if(obj[num] > 1) {
             return true;
         }
     }
-    
     return false;
 };
